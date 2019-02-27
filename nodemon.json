@@ -1,0 +1,6 @@
+{
+    "watch": ["src"],
+    "ext": "ts",
+    "ignore": ["src/**/*.spec.ts", "src/**/*/__mock__/*"],
+    "exec": "ts-node -r dotenv/config ./src/index.ts"
+  }
