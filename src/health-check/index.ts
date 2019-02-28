@@ -4,4 +4,4 @@ const healthCheck = Router();
 
 healthCheck.get("/", (_, res) => res.json({ status: "UP" }));
 
-export { healthCheck };
+export default healthCheck;

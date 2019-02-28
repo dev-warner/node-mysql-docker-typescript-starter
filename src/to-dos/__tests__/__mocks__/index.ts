@@ -1,18 +1,11 @@
-import request from "supertest";
-import server from "../../../server";
+import db from "../../../db";
+import { todoFactory } from "../../../db/models";
 
-export { createItem };
+const Todo = todoFactory(db.connection);
 
 const createItem = async (message) => {
-
-    const result = await request(server)
-        .post("/todos")
-        .send({ message })
-        .expect(200)
-        .then((response) => {
-            expect(response.body.message).toEqual(message);
-            expect(response.body.complete).toEqual(false);
-            return response.body;
-        });
-    return result;
+    const todo = await Todo.create({message});
+    return todo;
 };
+
+export { createItem };

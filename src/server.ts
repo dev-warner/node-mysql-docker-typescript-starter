@@ -6,10 +6,9 @@ import morgan from "morgan";
 
 import { CORS_OPTIONS } from "./config";
 import { attachDatabaseToApplication } from "./db";
-import { healthCheck } from "./health-check";
-import { ToDoRouter } from "./to-dos";
 
-import "./db";
+import healthCheck from "./health-check";
+import ToDoRouter from "./to-dos";
 
 const app = express();
 
@@ -27,9 +26,8 @@ export default app;
 
 /*
     init database - done
-    connect to database
+    connect to database - done
     testing with a database tear down and set up
     learn how to mock auth tokens
-    get linter/types working
     connect to a front end
 */

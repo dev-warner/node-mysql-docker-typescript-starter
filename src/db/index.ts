@@ -27,7 +27,7 @@ Object.values(db).forEach((model: any) => {
   }
 });
 
-const attachDatabaseToApplication = (req, res, next) => {
+const attachDatabaseToApplication = (req, _, next) => {
   req.db = db;
   next();
 };
