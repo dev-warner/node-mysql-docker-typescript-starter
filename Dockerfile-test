@@ -5,7 +5,8 @@ WORKDIR /home/node/app
 # Install deps
 COPY ./package* ./
 RUN npm install && \
-    npm cache clean --force
+    npm cache clean --force && \
+    npm run db:migrate
 
 COPY . .
 

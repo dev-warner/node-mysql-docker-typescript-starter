@@ -6,14 +6,15 @@ type SequelizeAttribute = string | DataTypeAbstract | DefineAttributeColumnOptio
 declare global {
   namespace Express {
     export interface Request {
-      db: {
-        connection: Sequelize
-        Sequelize: SequelizeStatic
-        Todo: Model<TodoInstance, ITodoAtrributes>
-      }
+      db: DbInterface
     }
   }
 
+  interface DbInterface {
+    connection: Sequelize;
+    Sequelize: SequelizeStatic;
+    Todo: Model<TodoInstance, ITodoAtrributes>;
+  }
 
   type SequelizeAttributes<T extends { [key: string]: any }> = {
     [P in keyof T]: SequelizeAttribute

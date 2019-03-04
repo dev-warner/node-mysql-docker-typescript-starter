@@ -3,9 +3,9 @@ import { Router } from "express";
 const router = Router();
 
 router
-  .get("/", async ({ db: { Todo }}, res) => {
+  .get("/", async ({ db }, res) => {
     try {
-      const todos = await Todo.findAll();
+      const todos = await db.Todo.findAll();
       res.send(todos);
     } catch (e) {
       res.status(403);

@@ -11,6 +11,7 @@ services:
     volumes:
       - "./src:/home/node/app/src"
     env_file:
+     -NODE_ENV="test"
      - ./.env
     depends_on:
       - db

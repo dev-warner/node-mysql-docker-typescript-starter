@@ -1,0 +1,6 @@
+#mocha.opts
+--recursive
+--require ts-node/register
+--watch-extensions ts
+--watch
+--file test/hooks.js

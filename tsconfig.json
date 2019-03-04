@@ -4,9 +4,6 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "types": ["jest", "./src"],
-    /* Experimental Options */
-    // "experimentalDecorators": true,
-    // "emitDecoratorMetadata": true,
+    "types": ["mocha", "./src"]
   }
 }
